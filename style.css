@@ -46,7 +46,7 @@ body {
 
 h1, h2, h3 { font-family: var(--font-heading); color: var(--color-primary-dark); }
 
-/* Customização do Menu com a nova Logo */
+/* Customização do Menu */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -99,7 +99,7 @@ h1, h2, h3 { font-family: var(--font-heading); color: var(--color-primary-dark);
     border-radius: 50px;
 }
 
-/* Hero Corrigido para AgroAliança */
+/* Hero Section */
 .hero {
     background: linear-gradient(to right, rgba(15, 64, 27, 0.9) 0%, rgba(21, 93, 39, 0.5) 100%), url('hero-agrivoltaico.jpg') center/cover no-repeat;
     min-height: 80vh;
@@ -223,6 +223,7 @@ h1, h2, h3 { font-family: var(--font-heading); color: var(--color-primary-dark);
 .simulator-form-side h2 { color: white; margin-bottom: 0.5rem; }
 .simulator-form-side p { opacity: 0.85; margin-bottom: 2.5rem; font-size: 0.95rem; }
 
+/* Input Groups */
 .input-group { margin-bottom: 1.5rem; }
 .input-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; }
 .input-group input, .input-group select {
@@ -240,7 +241,7 @@ h1, h2, h3 { font-family: var(--font-heading); color: var(--color-primary-dark);
 
 .error-box { background-color: rgba(214, 48, 49, 0.2); border-left: 4px solid #ff7675; padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; font-size: 0.9rem; }
 
-/* Estilização dos Resultados Dinâmicos */
+/* Painel de Resultados */
 .simulator-results-side { padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: center; background-color: var(--color-surface); }
 .empty-state { text-align: center; }
 .impact-img { width: 220px; margin: 0 auto 1.5rem auto; border-radius: 50%; display: block; }
@@ -251,7 +252,7 @@ h1, h2, h3 { font-family: var(--font-heading); color: var(--color-primary-dark);
 .result-box { background: var(--color-bg); padding: 1.25rem; border-radius: var(--radius-md); display: flex; flex-direction: column; border: 1px solid var(--color-border); }
 .result-label { font-size: 0.8rem; color: var(--color-text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
 
-/* Cores de Alerta de Vulnerabilidade */
+/* Cores de Alerta */
 .badge-critico { color: var(--color-error); font-size: 1.8rem; font-weight: 700; }
 .badge-medio { color: #f39c12; font-size: 1.8rem; font-weight: 700; }
 .badge-baixo { color: var(--color-success); font-size: 1.8rem; font-weight: 700; }
@@ -266,7 +267,26 @@ h1, h2, h3 { font-family: var(--font-heading); color: var(--color-primary-dark);
 .footer-logo { font-family: var(--font-heading); font-size: 2rem; color: var(--color-primary-light); margin-bottom: 1rem; }
 .footer-img { width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-md); opacity: 0.6; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; text-align: center; font-size: 0.85rem; color: #777; }
-.ai-declaration { margin-top: 0.6rem; font-style: italic; line-height: 1.4; }
+
+/* Configuração de Impressão Sem Limitações Flex */
+@media print {
+    body { background: white; color: black; }
+    .navbar, .hero, .hero-buttons, #problema, #solucoes, .simulator-form-side, .main-footer, .success-badge, button {
+        display: none !important;
+    }
+    .simulator-wrapper { padding: 0; background: transparent; }
+    .simulator-container { display: block; border: none; box-shadow: none; }
+    .simulator-results-side { display: block; padding: 0; }
+    .result-cards { display: block; }
+    .result-box { 
+        display: block; 
+        page-break-inside: avoid; 
+        margin-bottom: 15px; 
+        background: #f9f9f9; 
+        border: 1px solid #ccc; 
+        padding: 15px;
+    }
+}
 
 /* Animações */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
