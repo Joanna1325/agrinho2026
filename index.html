@@ -3,42 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Transição Energética Rural - Agrinho 2026</title>
+    <title>SustentaAgro - Transição Energética Rural | Agrinho 2026</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="header-container">
+    <header class="hero-section">
+        <div class="hero-content">
             <h1>SustentaAgro</h1>
-            <p>Simulador de Transição Energética para o Campo Paranaense</p>
+            <p class="hero-subtitle">Agro Forte, Futuro Sustentável: O Fim dos Prejuízos com Apagões no Campo Paranaense.</p>
+            <a href="#simulador" class="btn-primary">Faça sua Simulação Gratuita</a>
         </div>
     </header>
 
     <main class="main-content">
         
-        <article class="context-card">
-            <h2>Agro Forte, Futuro Sustentável</h2>
-            <p>
-                Produtor, a instabilidade na rede elétrica convencional gera prejuízos na produção e no bem-estar animal. 
-                Descubra como fontes alternativas de energia renovável podem reduzir seus custos operacionais e proteger o meio ambiente.
-            </p>
-        </article>
+        <section class="benefits-section">
+            <div class="benefit-card">
+                <h3>Autonomia Energética</h3>
+                <p>Proteja sua produção (como o controle térmico animal) das instabilidades da rede elétrica convencional.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Redução de Custos</h3>
+                <p>O investimento em painéis solares ou biogás se paga com a economia mensal na fatura de energia.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Sustentabilidade</h3>
+                <p>Reduza drasticamente a emissão de carbono da sua propriedade e contribua para um meio ambiente equilibrado.</p>
+            </div>
+        </section>
 
-        <section class="simulator-section">
-            <h2>Faça sua Simulação</h2>
+        <section id="simulador" class="simulator-section">
+            <h2>Calculadora de Viabilidade</h2>
             
             <div id="error-container" class="error-box" hidden aria-live="assertive"></div>
 
             <form id="simulator-form" novalidate>
                 <div class="input-group">
                     <label for="monthly-consumption">Consumo Mensal de Energia (kWh):</label>
-                    <input 
-                        type="number" 
-                        id="monthly-consumption" 
-                        placeholder="Ex: 1500" 
-                        required
-                    >
+                    <input type="number" id="monthly-consumption" placeholder="Ex: 1500" required>
                 </div>
 
                 <div class="input-group">
