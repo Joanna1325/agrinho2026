@@ -3,117 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SustentaAgro - Agrinho 2026</title>
+    <meta name="description" content="SustentaAgro: Simulador de viabilidade para transição energética rural. Agrinho 2026.">
+    <title>SustentaAgro - Transição Energética Rural | Agrinho 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <nav class="navbar">
-        <div class="nav-brand">🍃 SustentaAgro</div>
+    <nav class="navbar" aria-label="Navegação principal">
+        <div class="nav-brand">
+            <span class="brand-icon">🍃</span> SustentaAgro
+        </div>
         <ul class="nav-links">
             <li><a href="#inicio">Início</a></li>
-            <li><a href="#problema">O Problema</a></li>
-            <li><a href="#simulador">Simulador</a></li>
+            <li><a href="#problema">Desafios</a></li>
+            <li><a href="#solucoes">Soluções</a></li>
+            <li><a href="#simulador" class="btn-nav">Simulador</a></li>
         </ul>
     </nav>
 
-    <header id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Guia Tecnológico Contra o Prejuízo</h1>
-            <p>Uma plataforma interativa para produtores do Paraná evitarem perdas de safra e rebanho com apagões, através de energia limpa.</p>
-            <div class="hero-buttons">
-                <a href="#simulador" class="btn btn-primary">Explorar o Simulador</a>
-                <a href="#problema" class="btn btn-outline">Entender o Problema</a>
+    <main>
+        <header id="inicio" class="hero fade-in">
+            <div class="hero-content">
+                <span class="badge">Agrinho 2026</span>
+                <h1>Guia Tecnológico Contra o Prejuízo</h1>
+                <p>Proteja sua safra e rebanho dos apagões. Descubra a viabilidade da energia limpa e alcance a autossuficiência no campo paranaense.</p>
+                <div class="hero-buttons">
+                    <a href="#simulador" class="btn btn-primary">Iniciar Simulação</a>
+                    <a href="#problema" class="btn btn-outline">Entender os Riscos</a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section id="problema" class="section-container">
-        <h2 class="section-title">O Campo Pede Estabilidade</h2>
-        <p class="section-subtitle">As quedas e instabilidades na rede elétrica geram impactos severos e perdas financeiras na produção.</p>
-        
-        <div class="cards-grid">
-            <article class="card">
-                <div class="card-icon">🌡️</div>
-                <h3>Controle Térmico</h3>
-                <p>Aves e suínos sofrem com a falta de climatização. Apagões prolongados podem causar a mortalidade rápida de lotes inteiros.</p>
-            </article>
-            <article class="card">
-                <div class="card-icon">🥛</div>
-                <h3>Cadeia do Frio</h3>
-                <p>O resfriamento de leite é interrompido. A quebra térmica faz com que tanques inteiros precisem ser descartados por segurança sanitária.</p>
-            </article>
-            <article class="card">
-                <div class="card-icon">💰</div>
-                <h3>Custos Emergenciais</h3>
-                <p>Geradores a diesel, embora salvem a produção, possuem custo de operação elevado, manutenção complexa e alta emissão de poluentes.</p>
-            </article>
-        </div>
-    </section>
-
-    <section id="simulador" class="simulator-wrapper">
-        <div class="simulator-container">
+        <section id="problema" class="section-container">
+            <header class="section-header">
+                <h2>O Campo Pede Estabilidade</h2>
+                <p>As quedas na rede elétrica convencional geram impactos severos e perdas irreparáveis na produção.</p>
+            </header>
             
-            <div class="simulator-form-side">
-                <h2>Configure sua Produção</h2>
-                <p>Descubra a viabilidade da transição energética para a sua propriedade rural.</p>
+            <div class="cards-grid">
+                <article class="card slide-up">
+                    <img src="card-controle-termico.jpg" alt="Interior de aviário climatizado moderno" class="card-img" loading="lazy">
+                    <div class="card-content">
+                        <span class="card-tag">Risco Iminente</span>
+                        <h3>Controle Térmico</h3>
+                        <p>Aves e suínos sofrem com a falta de climatização. Apagões causam estresse térmico e mortalidade rápida de lotes inteiros.</p>
+                    </div>
+                </article>
+
+                <article class="card slide-up" style="animation-delay: 0.1s;">
+                    <img src="card-cadeia-frio.jpg" alt="Tanque industrial de resfriamento de leite" class="card-img" loading="lazy">
+                    <div class="card-content">
+                        <span class="card-tag">Perda de Produto</span>
+                        <h3>Cadeia do Frio</h3>
+                        <p>A interrupção do resfriamento faz com que tanques inteiros de leite precisem ser descartados por segurança sanitária.</p>
+                    </div>
+                </article>
+
+                <article class="card slide-up" style="animation-delay: 0.2s;">
+                    <img src="card-custos-emergenciais.jpg" alt="Gerador a diesel industrial em fazenda" class="card-img" loading="lazy">
+                    <div class="card-content">
+                        <span class="card-tag">Gasto Elevado</span>
+                        <h3>Custos Emergenciais</h3>
+                        <p>Geradores a diesel salvam a produção, mas possuem custo de operação altíssimo e emitem muitos poluentes.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="solucoes" class="solutions-section">
+            <div class="section-container">
+                <header class="section-header">
+                    <h2>Soluções Inteligentes e Sustentáveis</h2>
+                    <p>Tecnologias aliadas à gestão de dados para minimizar perdas e maximizar lucros.</p>
+                </header>
+
+                <div class="solutions-grid">
+                    <div class="solution-item">
+                        <img src="solucao-silos.jpg" alt="Sensor inteligente dentro de silo de grãos" class="solution-img" loading="lazy">
+                        <div class="solution-text">
+                            <h3>Monitoramento Inteligente</h3>
+                            <p>Sensores sem fio alertam sobre umidade e temperatura nos silos em tempo real.</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <img src="icones-categorias.jpg" alt="Ícones de grãos, frutas e laticínios" class="solution-img contain-img" loading="lazy">
+                        <div class="solution-text">
+                            <h3>Gestão Multi-Cultura</h3>
+                            <p>Plataforma adaptável para grãos, hortaliças, laticínios e carnes.</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <img src="solucao-sacolas.jpg" alt="Sacola hermética para grãos" class="solution-img" loading="lazy">
+                        <div class="solution-text">
+                            <h3>Armazenamento Avançado</h3>
+                            <p>Uso de sacolas herméticas para pequenos produtores protegerem sua colheita.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulador" class="simulator-wrapper">
+            <div class="simulator-container">
                 
-                <div id="error-container" class="error-box" hidden aria-live="assertive"></div>
+                <div class="simulator-form-side">
+                    <h2>Calculadora de Autonomia</h2>
+                    <p>Descubra o tempo de retorno ao adotar energia solar ou biogás.</p>
+                    
+                    <div id="error-container" class="error-box" hidden aria-live="assertive" role="alert"></div>
 
-                <form id="simulator-form" novalidate>
-                    <div class="input-group">
-                        <label for="monthly-consumption">Consumo Mensal Estimado (kWh):</label>
-                        <input type="number" id="monthly-consumption" placeholder="Ex: 1500" required>
-                    </div>
+                    <form id="simulator-form" novalidate>
+                        <div class="input-group">
+                            <label for="monthly-consumption">Consumo Mensal de Energia (kWh):</label>
+                            <input type="number" id="monthly-consumption" placeholder="Ex: 1500" required aria-required="true">
+                        </div>
 
-                    <div class="input-group">
-                        <label for="energy-source">Cenário Tecnológico Desejado:</label>
-                        <select id="energy-source" required>
-                            <option value="" disabled selected>Selecione uma tecnologia...</option>
-                            <option value="solar">Painel Solar Fotovoltaico</option>
-                            <option value="biogas">Biodigestor (Biogás / CIBiogás)</option>
-                        </select>
-                    </div>
+                        <div class="input-group">
+                            <label for="energy-source">Cenário Tecnológico Sustentável:</label>
+                            <select id="energy-source" required aria-required="true">
+                                <option value="" disabled selected>Selecione uma tecnologia...</option>
+                                <option value="solar">Painel Solar Fotovoltaico</option>
+                                <option value="biogas">Biodigestor (Biogás / CIBiogás)</option>
+                            </select>
+                        </div>
 
-                    <button type="submit" class="btn btn-secondary w-100">Calcular Impacto</button>
-                </form>
-            </div>
-            
-            <div class="simulator-results-side">
-                <div id="empty-state" class="empty-state">
-                    <div class="empty-icon">🌱</div>
-                    <p>Preencha os dados da sua propriedade ao lado e clique em "Calcular Impacto" para ver sua projeção financeira e ambiental.</p>
+                        <button type="submit" class="btn btn-secondary w-100">Calcular Impacto</button>
+                    </form>
                 </div>
+                
+                <div class="simulator-results-side">
+                    <div id="empty-state" class="empty-state">
+                        <img src="grafico-impacto.jpg" alt="Gráfico circular de impacto zero" class="impact-img" loading="lazy">
+                        <p>Preencha os dados e clique em "Calcular" para gerar seu relatório de impacto financeiro e ambiental.</p>
+                    </div>
 
-                <div id="results-section" class="results-content" hidden>
-                    <h3>Sua Projeção Sustentável</h3>
-                    
-                    <div class="result-box">
-                        <span class="result-label">Tempo de Retorno (Payback)</span>
-                        <strong id="payback-output" class="highlight-green">--</strong>
+                    <div id="results-section" class="results-content" hidden aria-live="polite">
+                        <span class="success-badge">Simulação Concluída</span>
+                        <h3>Sua Projeção Sustentável</h3>
+                        
+                        <div class="result-cards">
+                            <div class="result-box">
+                                <span class="result-icon">⏱️</span>
+                                <span class="result-label">Tempo de Retorno (Payback)</span>
+                                <strong id="payback-output" class="highlight-green">--</strong>
+                            </div>
+                            
+                            <div class="result-box">
+                                <span class="result-icon">🌍</span>
+                                <span class="result-label">Redução Anual de CO₂</span>
+                                <strong id="co2-output" class="highlight-green">--</strong>
+                            </div>
+                        </div>
+                        
+                        <p class="result-note"><small>* Estimativas baseadas em dados médios de investimento, ODS 12.3 e tarifas rurais.</small></p>
                     </div>
-                    
-                    <div class="result-box">
-                        <span class="result-label">Redução Anual de CO₂</span>
-                        <strong id="co2-output" class="highlight-green">--</strong>
-                    </div>
-                    
-                    <p class="result-note">* Estimativas baseadas em dados médios de investimento e tarifas rurais.</p>
                 </div>
             </div>
+        </section>
+    </main>
 
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">🍃 SustentaAgro</div>
+                <p>"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"</p>
+            </div>
+            <div class="footer-col">
+                <img src="sobre-sustentabilidade.jpg" alt="Mãos segurando uma planta" class="footer-img" loading="lazy">
+            </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">🍃 SustentaAgro</div>
-            <p>"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"</p>
-            <p class="credits">Concurso Agrinho 2026 — Subcategoria 3: Ensino Médio.</p>
-            <p><small>Engenharia de Prompt utilizada para refinamento de código com supervisão do Tutor IA.</small></p>
+        <div class="footer-bottom">
+            <p>Concurso Agrinho 2026 — Subcategoria 3: Ensino Médio.</p>
+            <p class="ai-declaration">Engenharia de software com uso ético e declarado de Inteligência Artificial para geração de mídia e refinamento de código.</p>
         </div>
     </footer>
     
