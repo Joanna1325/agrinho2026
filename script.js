@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     simulatorForm.addEventListener('submit', (event) => {
+        // ESSENCIAL: Impede a página de atualizar sozina!
         event.preventDefault();
         limparErroUI();
 
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const consumoNumerico = parseFloat(consumoTexto);
 
-        // --- Camada Avançada de Validação ---
+        // --- Camada de Validação Interceptada ---
         if (!consumoTexto || isNaN(consumoNumerico)) {
             exibirErroUI("Por favor, informe o consumo de energia mensal em kWh.");
             consumptionInput.focus();
@@ -81,31 +82,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // --- Core Algorítmico 1: Vulnerabilidade e Prejuízo ---
-        let fatorPrejuizoAtividade = 0; // Custo estimado em perda por kWh exposto
-        if (atividade === 'avicultura') fatorPrejuizoAtividade = 9.50; // Alto risco por morte térmica
-        if (atividade === 'laticinios')  fatorPrejuizoAtividade = 5.20; // Risco médio por descarte de leite
-        if (atividade === 'graos')       fatorPrejuizoAtividade = 2.80; // Risco menor por perda de qualidade
+        let fPrejuizo = 0; 
+        if (atividade === 'avicultura') fPrejuizo = 9.50; 
+        if (atividade === 'laticinios')  fPrejuizo = 5.20; 
+        if (atividade === 'graos')       fPrejuizo = 2.80; 
 
-        let multiplicadorFrequencia = 0;
+        let multFreq = 0;
         let classeVulnerabilidade = '';
         let textoVulnerabilidade = '';
 
         if (frequenciaQuedas === 'baixa') {
-            multiplicadorFrequencia = 1.2;
+            multFreq = 1.2;
             textoVulnerabilidade = 'BAIXA';
             classeVulnerabilidade = 'badge-baixo';
         } else if (frequenciaQuedas === 'media') {
-            multiplicadorFrequencia = 3.5;
+            multFreq = 3.5;
             textoVulnerabilidade = 'MÉDIA';
             classeVulnerabilidade = 'badge-medio';
         } else {
-            multiplicadorFrequencia = 7.0;
+            multFreq = 7.0;
             textoVulnerabilidade = 'CRÍTICA';
             classeVulnerabilidade = 'badge-critico';
         }
 
-        // Cálculo matemático do impacto financeiro do apagão anual
-        const prejuizoAnualEstimado = consumoNumerico * fatorPrejuizoAtividade * multiplicadorFrequencia * 0.12;
+        const prejuizoAnualEstimado = consumoNumerico * fPrejuizo * multFreq * 0.12;
 
         // --- Core Algorítmico 2: Payback e Crédito ---
         const configTecno = MATRIZ_ENERGETICA[tecnologiaEscolhida];
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const mesesPayback = Math.ceil(investimentoInstalacao / economiaMensalReal);
         const co2EconomizadoTon = ((consumoNumerico * 12) * CO2_EMISSAO_FACTOR) / 1000;
 
-        // --- Core Algorítmico 3: Recomendação Inteligente de Crédito ---
+        // --- Core Algorítmico 3: Linhas de Crédito ---
         let linhaCreditoRecomendada = '';
         if (consumoNumerico <= 1200) {
             linhaCreditoRecomendada = "PRONAF Eco (Subsidiado para Pequeno Produtor)";
@@ -127,28 +127,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // --- Camada de Renderização na UI ---
-        
-        // Aplica a cor dinâmica de risco baseada no algoritmo
         vulnerabilityOutput.className = classeVulnerabilidade;
         vulnerabilityOutput.textContent = textoVulnerabilidade;
 
-        // Formatação monetária brasileira (R$)
         lossOutput.textContent = prejuizoAnualEstimado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-        // Formatação do Tempo de Retorno
+        // Correção Completa do Espaço na Variável
         if (mesesPayback >= 12) {
             const anos = Math.floor(mesesPayback / 12);
-            const meses Restantes = mesesPayback % 12;
+            const mesesRestantes = mesesPayback % 12;
             paybackOutput.textContent = mesesRestantes === 0 ? `${anos} ano(s)` : `${anos} ano(s) e ${mesesRestantes} mês(es)`;
         } else {
             paybackOutput.textContent = `${mesesPayback} meses`;
         }
 
-        // Renderiza linha de crédito e CO2
         creditOutput.textContent = linhaCreditoRecomendada;
         co2Output.textContent = `${co2EconomizadoTon.toLocaleString('pt-BR', { maximumFractionDigits: 2 })} Toneladas`;
 
-        // Transição de tela suave
+        // Transição Visual Suave
         emptyState.style.display = 'none';
         resultsSection.removeAttribute('hidden');
         resultsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
