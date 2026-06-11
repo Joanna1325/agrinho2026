@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Transição Energética Rural - Agrinho 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <h1>SustentaAgro</h1>
+            <p>Simulador de Transição Energética para o Campo Paranaense</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <article class="context-card">
+            <h2>Agro Forte, Futuro Sustentável</h2>
+            <p>
+                Produtor, a instabilidade na rede elétrica convencional gera prejuízos na produção e no bem-estar animal. 
+                Descubra como fontes alternativas de energia renovável podem reduzir seus custos operacionais e proteger o meio ambiente.
+            </p>
+        </article>
+
+        <section class="simulator-section">
+            <h2>Faça sua Simulação</h2>
+            
+            <div id="error-container" class="error-box" hidden aria-live="assertive"></div>
+
+            <form id="simulator-form" novalidate>
+                <div class="input-group">
+                    <label for="monthly-consumption">Consumo Mensal de Energia (kWh):</label>
+                    <input 
+                        type="number" 
+                        id="monthly-consumption" 
+                        placeholder="Ex: 1500" 
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="energy-source">Escolha a Fonte Sustentável Alternativa:</label>
+                    <select id="energy-source" required>
+                        <option value="" disabled selected>Selecione uma opção...</option>
+                        <option value="solar">Painel Solar Fotovoltaico</option>
+                        <option value="biogas">Biodigestor (Biogás / CIBiogás)</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="btn-simulate">Calcular Viabilidade</button>
+            </form>
+        </section>
+
+        <section id="results-section" class="results-card" hidden>
+            <h2>Resultado da Análise Tecnológica</h2>
+            
+            <div class="results-grid">
+                <article class="result-item">
+                    <h3>Tempo de Retorno (Payback)</h3>
+                    <p id="payback-output" class="result-highlight">--</p>
+                </article>
+
+                <article class="result-item">
+                    <h3>Redução Anual de CO₂</h3>
+                    <p id="co2-output" class="result-highlight">--</p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Concurso Agrinho - Subcategoria 3: Ensino Médio.</p>
+        <p class="credits">Desenvolvido por Alunos da 2ª Série do Ensino Médio - Rede Pública do Paraná.</p>
+        <p class="ai-declaration"><small>Engenharia de Prompt utilizada para refinamento de código com supervisão do Tutor IA.</small></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
