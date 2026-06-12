@@ -1,3 +1,14 @@
+/* ==================================================
+   FORÇAR O SCROLL PARA O TOPO AO RECARREGAR
+   ================================================== */
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
+/* ==================================================
+   LÓGICA DO SIMULADOR DE ENERGIA
+   ================================================== */
 document.addEventListener('DOMContentLoaded', () => {
     // Mapeamento do DOM
     const simulatorForm = document.querySelector('#simulator-form');
